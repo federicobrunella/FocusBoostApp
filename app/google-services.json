@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "112106892445",
+    "project_id": "focusboostapp",
+    "storage_bucket": "focusboostapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112106892445:android:a5e22f93b299a58a623874",
+        "android_client_info": {
+          "package_name": "com.example.focusboostapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112106892445-d6f7d2stjk80qj01hq3jo532f8djdehs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSCVJF4ZYXyZbWdPfRXOOMRJI9BIyuHDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112106892445-d6f7d2stjk80qj01hq3jo532f8djdehs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
