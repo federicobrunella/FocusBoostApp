@@ -61,7 +61,7 @@ class StatsFragment : Fragment() {
         EventChangeListener()
 
         //binding.statsViewModel = viewModel
-        binding.lifecycleOwner= this
+        //binding.lifecycleOwner= this
 
     }
 

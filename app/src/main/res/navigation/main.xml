@@ -19,5 +19,19 @@
         android:id="@+id/stats"
         android:name="com.example.focusboostapp.stats.StatsFragment"
         android:label="fragment_stats"
-        tools:layout="@layout/fragment_stats" />
+        tools:layout="@layout/fragment_stats" >
+        <action
+            android:id="@+id/action_stats_to_statsDetail"
+            app:destination="@id/statsDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/statsDetail"
+        android:name="com.example.focusboostapp.stats.StatsDetailFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats_detail" >
+        <action
+            android:id="@+id/action_statsDetail_to_stats"
+            app:destination="@id/stats" />
+    </fragment>
 </navigation>

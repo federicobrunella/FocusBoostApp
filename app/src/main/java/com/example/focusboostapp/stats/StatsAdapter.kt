@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.focusboostapp.R
 
@@ -35,6 +37,10 @@ class StatsAdapter(private val statsList: List<Stats>) : RecyclerView.Adapter<St
         else {
             holder.status.text = "FALLITO"
             holder.status.setTextColor((Color.parseColor("#ff0000")))
+        }
+
+        holder.itemView.setOnClickListener{ view ->
+            view.findNavController().navigate(R.id.action_stats_to_statsDetail)
         }
 
     }
