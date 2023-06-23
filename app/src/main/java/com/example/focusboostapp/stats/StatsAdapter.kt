@@ -40,7 +40,10 @@ class StatsAdapter(private val statsList: List<Stats>) : RecyclerView.Adapter<St
         }
 
         holder.itemView.setOnClickListener{ view ->
-            view.findNavController().navigate(R.id.action_stats_to_statsDetail)
+            //val stats2 = Stats(stats.user, stats.startDateTime)
+            val action = StatsFragmentDirections.actionStatsToStatsDetail(stats)
+            //val action = R.id.action_stats_to_statsDetail
+            view.findNavController().navigate(action)
         }
 
     }
