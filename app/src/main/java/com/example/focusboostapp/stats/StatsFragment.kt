@@ -74,6 +74,7 @@ class StatsFragment : Fragment() {
         db = FirebaseFirestore.getInstance()
         db.collection("sessions")
             .whereEqualTo("user", firebaseAuth.currentUser?.email)
+            .orderBy("timestamp", Query.Direction.DESCENDING)
             .addSnapshotListener(object: EventListener<QuerySnapshot>{
                 override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
                     if(error != null)

@@ -7,8 +7,10 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.focusboostapp.util.Settings
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -111,7 +113,8 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
             "stopDateTime" to current.toString(),
             "completedSession" to completedSession,
             "DND" to AppSettings.settingsDND,
-            "immersiveMode" to AppSettings.settingsImmersiveMode
+            "immersiveMode" to AppSettings.settingsImmersiveMode,
+            "timestamp" to Timestamp.now()
         )
 
         statsDatabase.collection("sessions")
