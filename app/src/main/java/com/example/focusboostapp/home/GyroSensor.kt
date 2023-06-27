@@ -2,7 +2,6 @@ package com.example.focusboostapp.home
 
 import android.content.Context
 import android.content.Context.SENSOR_SERVICE
-import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
