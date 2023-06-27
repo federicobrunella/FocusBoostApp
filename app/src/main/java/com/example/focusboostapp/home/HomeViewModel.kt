@@ -17,8 +17,10 @@ import java.time.format.DateTimeFormatter
 class HomeViewModel (application: Application): AndroidViewModel(application) {
 
     lateinit var AppSettings: Settings
+    private lateinit var context: Context
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var startTimestamp: String
+    private var sensor: GyroSensor = GyroSensor()
 
 
     //--------------------LiveData---------------------
@@ -39,13 +41,8 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
     lateinit var timer: CountDownTimer
     //--------------------------------------------------
 
-    fun init(context: Context) {
-        /*settings = SharedPreferencesUtil(context)
-        settingsHours = settings.getSettingsIntValue("timer_Hours")
-        settingsMinutes = settings.getSettingsIntValue("timer_Minutes")
-        settingseconds = settings.getSettingsIntValue("timer_Seconds")
-        setHmsString(settingsHours.toLong(), settingsMinutes.toLong(), settingseconds.toLong())
-        _progressBarValue.value = 100F*/
+    fun init(appContext: Context) {
+        context = appContext
         AppSettings = Settings(context)
         AppSettings.updateSettings(context)
         setHmsString(AppSettings.settingsHours.toLong(), AppSettings.settingsMinutes.toLong(), AppSettings.settingseconds.toLong())
@@ -57,8 +54,11 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
     }
 
     fun startTimer(time: Long = 60000, countDownInterval: Long = 10) {
+
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
         startTimestamp = LocalDateTime.now().format(formatter).toString()
+        sensor.startSensor(context)
+
         timer = object : CountDownTimer(time , countDownInterval) {
             override fun onTick(millisUntilFinished: Long) {
                 var millis: Long = millisUntilFinished
@@ -76,6 +76,7 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
                 _isRunning.value = false
 
                 saveSessionStats(true, startTimestamp)
+                sensor.stopSensor()
 
             }
         }
@@ -89,6 +90,7 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
         _progressBarValue.value = 100F
 
         saveSessionStats(false, startTimestamp)
+        sensor.stopSensor()
     }
 
     private fun setHmsString(hours: Long, minutes: Long, seconds: Long){
@@ -114,7 +116,8 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
             "completedSession" to completedSession,
             "DND" to AppSettings.settingsDND,
             "immersiveMode" to AppSettings.settingsImmersiveMode,
-            "timestamp" to Timestamp.now()
+            "timestamp" to Timestamp.now(),
+            "userDistractions" to sensor.userDistractions
         )
 
         statsDatabase.collection("sessions")
