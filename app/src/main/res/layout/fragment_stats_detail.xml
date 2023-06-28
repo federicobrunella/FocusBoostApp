@@ -11,235 +11,250 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:foregroundTint="#FFFFFF">
+            android:foregroundTint="#FFFFFF"
+            android:paddingTop="0dp"
+            android:paddingBottom="25dp">
 
-            <Button
-                android:id="@+id/back"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                 />
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="580dp"
-                android:text="TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="409dp"
-                android:layout_height="578dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.013">
+                app:layout_constraintTop_toTopOf="parent">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_background"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="15dp">
 
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="0dp"
-                    android:layout_height="247dp"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="15dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/white_background" />
-
-
-                <LinearLayout
-                    android:id="@+id/linearLayoutAttributes"
-                    android:layout_width="185dp"
-                    android:layout_height="185dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                    app:layout_constraintHorizontal_bias="0.111"
-                    app:layout_constraintStart_toStartOf="@+id/imageView4"
-                    app:layout_constraintTop_toTopOf="@+id/imageView4"
-                    app:layout_constraintVertical_bias="0.421">
-
-                    <TextView
-                        android:id="@+id/textViewDnd"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="DnD:"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/linearLayoutAttributes"
-                        app:layout_constraintEnd_toEndOf="@+id/linearLayoutAttributes"
-                        app:layout_constraintHorizontal_bias="@+id/linearLayoutAttributes"
-                        app:layout_constraintStart_toStartOf="@+id/linearLayoutAttributes"
-                        app:layout_constraintTop_toTopOf="@+id/linearLayoutAttributes"
-                        app:layout_constraintVertical_bias="@+id/linearLayoutAttributes" />
+                        android:orientation="horizontal"
+                        tools:layout_editor_absoluteX="1dp"
+                        tools:layout_editor_absoluteY="1dp">
 
-                    <TextView
-                        android:id="@+id/textViewCompletedSession"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewStartDateTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Session Start:"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.093"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.827" />
+
+                            <TextView
+                                android:id="@+id/textViewDnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-black"
+                                android:text="DND Mode:"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/linearLayoutAttributes"
+                                app:layout_constraintEnd_toEndOf="@+id/linearLayoutAttributes"
+                                app:layout_constraintHorizontal_bias="@+id/linearLayoutAttributes"
+                                app:layout_constraintStart_toStartOf="@+id/linearLayoutAttributes"
+                                app:layout_constraintTop_toTopOf="@+id/linearLayoutAttributes"
+                                app:layout_constraintVertical_bias="@+id/linearLayoutAttributes" />
+
+                            <TextView
+                                android:id="@+id/textViewCompletedSession"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Session Result:"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.103"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.336" />
+
+                            <TextView
+                                android:id="@+id/textViewImmersiveMode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Immersive Mode:"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.093"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textViewSessionLength"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-black"
+                                android:text="Session Length:"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.093"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.663" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewStartDateTimeContent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="value"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.762"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.827" />
+
+                            <TextView
+                                android:id="@+id/textViewDndContent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="value"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.762"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.172" />
+
+                            <TextView
+                                android:id="@+id/textViewCompletedSessionContent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="value"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.762"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.336" />
+
+                            <TextView
+                                android:id="@+id/textViewImmersiveModeContent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="value"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.762"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textViewSessionLengthContent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="value"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.762"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.663" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:background="@drawable/white_background"
+                    android:paddingBottom="15dp">
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Completed Session:"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.103"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.336" />
+                        app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:id="@+id/textViewImmersiveMode"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Immersive Mode:"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.093"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:text="Advanced Stats:"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/textViewSessionLength"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Session Length:"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.093"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.663" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:itemCount="5"
+                            tools:listitem="@layout/card_view_detail_stats" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/textViewStartDateTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Start date Time:"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.093"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.827" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayoutContent"
-                    android:layout_width="185dp"
-                    android:layout_height="185dp"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="5dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                    app:layout_constraintHorizontal_bias="0.931"
-                    app:layout_constraintStart_toStartOf="@+id/imageView4"
-                    app:layout_constraintTop_toTopOf="@+id/imageView4"
-                    app:layout_constraintVertical_bias="0.428">
-
-                    <TextView
-                        android:id="@+id/textViewDndContent"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Stats De Dio"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.762"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.172" />
-
-                    <TextView
-                        android:id="@+id/textViewCompletedSessionContent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Stats De Dio"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.762"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.336" />
-
-                    <TextView
-                        android:id="@+id/textViewImmersiveModeContent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Stats De Dio"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.762"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textViewSessionLengthContent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Stats De Dio"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.762"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.663" />
-
-                    <TextView
-                        android:id="@+id/textViewStartDateTimeContent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="5dp"
-                        android:fontFamily="sans-serif-light"
-                        android:text="Stats De Dio"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.762"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.827" />
-                </LinearLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+                <Button
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Back"
+                    app:iconPadding="8dp" />
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

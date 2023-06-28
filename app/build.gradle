@@ -70,4 +70,7 @@ dependencies {
 
     //cardview
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    //timelineview
+    implementation 'com.github.vipulasri:timelineview:1.1.5'
 }

@@ -90,8 +90,6 @@ class StatsFragment : Fragment() {
 
                     adapter.notifyDataSetChanged()
                 }
-
-
             })
     }
 }

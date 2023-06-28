@@ -7,12 +7,13 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.util.Log
+import com.google.firebase.Timestamp
 import java.time.LocalDateTime
 import kotlin.math.absoluteValue
 
 class GyroSensor : SensorEventListener {
 
-    lateinit var userDistractions : ArrayList<LocalDateTime>
+    lateinit var userDistractions : ArrayList<Timestamp>
     private lateinit var sensorManager: SensorManager
     var counter = 0
 
@@ -57,7 +58,7 @@ class GyroSensor : SensorEventListener {
                 Log.i("LIFT-UP", "Smartphone touched!")
 
                 if (counter > 10) {
-                    userDistractions.add(LocalDateTime.now())
+                    userDistractions.add(Timestamp.now())
                     counter = 0
                 }
             }
