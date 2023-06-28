@@ -29,9 +29,15 @@ class StatsDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val arg = args.StatsDetailArg
+        val arg = args.statsDetailArg
 
-        binding.textView2.text = arg.startDateTime
+        binding.textViewDndContent.text= arg.DND.toString()
+        binding.textViewCompletedSessionContent.text= arg.completedSession.toString()
+        binding.textViewImmersiveModeContent.text= arg.immersiveMode.toString()
+        binding.textViewSessionLengthContent.text= String.format ("%02d:%02d:%02d", arg.sessionLengthHours, arg.sessionLengthMinutes, arg.sessionLengthSeconds)
+        binding.textViewStartDateTimeContent.text= arg.stopDateTime
+
+
         //binding.textView2.text = arg.timestamp.toString()
 
 
