@@ -42,7 +42,7 @@ class StatsDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val arg = args.StatsDetailArg
+        val arg = args.statsDetailArg
 
         // getting the recyclerview
         val recyclerview = binding.recyclerview
