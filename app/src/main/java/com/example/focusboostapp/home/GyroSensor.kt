@@ -6,19 +6,25 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.firebase.Timestamp
 import java.time.LocalDateTime
 import kotlin.math.absoluteValue
 
 class GyroSensor : SensorEventListener {
 
-    lateinit var userDistractions : ArrayList<Timestamp>
+    var userDistractions : ArrayList<Timestamp> = arrayListOf()
     private lateinit var sensorManager: SensorManager
+    private  lateinit var context: Context
     var counter = 0
 
 
-    fun startSensor(context: Context){
+    fun startSensor(appContext: Context){
+        context = appContext
         userDistractions = ArrayList()
         // Create the sensor manager
         sensorManager = context.getSystemService(SENSOR_SERVICE) as SensorManager
@@ -53,13 +59,15 @@ class GyroSensor : SensorEventListener {
             val upDown = event.values[1]
             Log.i("UP/DOWN", event.values[1].toString())
 
-            if( sides.absoluteValue >.5f || upDown.absoluteValue >1.5f) {
+            if( sides.absoluteValue >1.5f || upDown.absoluteValue >1.5f) {
                 counter++
                 Log.i("LIFT-UP", "Smartphone touched!")
 
                 if (counter > 10) {
                     userDistractions.add(Timestamp.now())
                     counter = 0
+                    Toast.makeText(context, "Stay Focused!", Toast.LENGTH_SHORT).show()
+                    vibrate()
                 }
             }
         }
@@ -67,5 +75,10 @@ class GyroSensor : SensorEventListener {
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
         return
+    }
+
+    private fun vibrate(){
+        val vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        vibrator.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE))
     }
 }

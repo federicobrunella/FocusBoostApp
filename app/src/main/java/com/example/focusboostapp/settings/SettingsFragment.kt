@@ -19,7 +19,6 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.focusboostapp.R
 import com.example.focusboostapp.SignInActivity
-import com.example.focusboostapp.databinding.FragmentHomeBinding
 import com.example.focusboostapp.databinding.FragmentSettingsBinding
 import com.example.focusboostapp.home.HomeViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -52,6 +51,9 @@ class SettingsFragment : Fragment() {
 
         val ImmersiveModeSwitch = binding.ImmersiveModeSwitch
         ImmersiveModeSwitch.setChecked(viewModel.AppSettings.settingsImmersiveMode)
+
+        val AdvancedSettingsSwitch = binding.AdvancedStatsSwitch
+        AdvancedSettingsSwitch.setChecked(viewModel.AppSettings.settingsAdvancedSettings)
 
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_picker)
@@ -117,6 +119,11 @@ class SettingsFragment : Fragment() {
 
         ImmersiveModeSwitch.setOnClickListener {
             viewModel.AppSettings.settingsImmersiveMode = ImmersiveModeSwitch.isChecked
+            viewModel.saveSettings(requireContext())
+        }
+
+        AdvancedSettingsSwitch.setOnClickListener {
+            viewModel.AppSettings.settingsAdvancedSettings = AdvancedSettingsSwitch.isChecked
             viewModel.saveSettings(requireContext())
         }
 

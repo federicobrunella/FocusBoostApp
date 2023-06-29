@@ -14,10 +14,10 @@
         android:padding="5dp">
 
         <ImageView
-            android:id="@+id/imageview"
+            android:id="@+id/detail_stats_img_view"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            app:srcCompat="@drawable/baseline_blur_circular_24" />
+            app:srcCompat="@drawable/baseline_adjust_24" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

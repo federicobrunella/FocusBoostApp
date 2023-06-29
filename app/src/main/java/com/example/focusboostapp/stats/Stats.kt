@@ -16,6 +16,7 @@ data class Stats(val user: String = "user",
                  val immersiveMode: Boolean = false,
                  val completedSession: Boolean = false,
                  val timestamp: Timestamp?= null,
+                 val advancedSettings: Boolean ?= null,
                  val userDistractions: ArrayList<Timestamp> ?= null
 ) : Parcelable {
 

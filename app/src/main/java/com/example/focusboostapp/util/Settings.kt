@@ -12,6 +12,7 @@ class Settings (context: Context) {
 
     var settingsDND: Boolean = false
     var settingsImmersiveMode: Boolean = false
+    var settingsAdvancedSettings: Boolean = false
 
 
     fun updateSettings(context: Context) {
@@ -22,6 +23,7 @@ class Settings (context: Context) {
 
         settingsDND = settings.getBoolValue("DND")
         settingsImmersiveMode = settings.getBoolValue("ImmersiveMode")
+        settingsAdvancedSettings = settings.getBoolValue("advancedSettings")
 
     }
 
@@ -33,6 +35,7 @@ class Settings (context: Context) {
 
         settings.setBoolValue("DND", settingsDND)
         settings.setBoolValue("ImmersiveMode",settingsImmersiveMode)
+        settings.setBoolValue("advancedSettings", settingsAdvancedSettings)
 
     }
 }

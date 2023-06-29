@@ -57,7 +57,8 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
 
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
         startTimestamp = LocalDateTime.now().format(formatter).toString()
-        sensor.startSensor(context)
+        if (AppSettings.settingsAdvancedSettings)
+            sensor.startSensor(context)
 
         timer = object : CountDownTimer(time , countDownInterval) {
             override fun onTick(millisUntilFinished: Long) {
@@ -76,7 +77,8 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
                 _isRunning.value = false
 
                 saveSessionStats(true, startTimestamp)
-                sensor.stopSensor()
+                if (AppSettings.settingsAdvancedSettings)
+                    sensor.stopSensor()
 
             }
         }
@@ -90,7 +92,8 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
         _progressBarValue.value = 100F
 
         saveSessionStats(false, startTimestamp)
-        sensor.stopSensor()
+        if (AppSettings.settingsAdvancedSettings)
+            sensor.stopSensor()
     }
 
     private fun setHmsString(hours: Long, minutes: Long, seconds: Long){
@@ -116,6 +119,7 @@ class HomeViewModel (application: Application): AndroidViewModel(application) {
             "completedSession" to completedSession,
             "DND" to AppSettings.settingsDND,
             "immersiveMode" to AppSettings.settingsImmersiveMode,
+            "advancedSettings" to AppSettings.settingsAdvancedSettings,
             "timestamp" to Timestamp.now(),
             "userDistractions" to sensor.userDistractions
         )

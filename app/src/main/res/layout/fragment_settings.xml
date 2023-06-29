@@ -19,6 +19,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:orientation="vertical"
                     android:paddingTop="75dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -27,12 +28,14 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/white_background">
 
                         <TextView
                             android:id="@+id/textView7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
                             android:paddingRight="30dp"
                             android:text="Default timer:"
                             android:textSize="24sp"
@@ -47,7 +50,9 @@
                             android:id="@+id/settingsTimerView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="15dp"
+                            android:paddingTop="30dp"
+                            android:paddingRight="15dp"
+                            android:paddingBottom="30dp"
                             android:text="@{settingsViewModel.hmsSettings}"
                             android:textSize="34sp"
                             android:textStyle="bold"
@@ -59,58 +64,99 @@
                             app:layout_constraintVertical_bias="1.0" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp" />
+
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/white_background"
+                        android:gravity="center_horizontal"
                         android:orientation="vertical"
-                        android:paddingTop="65dp">
+                        android:paddingLeft="15dp"
+                        android:paddingTop="10dp">
 
 
-                        <Switch
-                            android:id="@+id/DND_switch"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingTop="20dp"
-                            android:paddingBottom="20dp"
-                            android:text="Non Disturbare: "
-                            android:textOff="OFF"
-                            android:textOn="ON" />
+                            android:orientation="horizontal">
 
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Non Disturbare: "
+                                android:textSize="16sp" />
 
-                        <Switch
-                            android:id="@+id/switch2"
-                            android:layout_width="wrap_content"
+                            <Switch
+                                android:id="@+id/DND_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingBottom="20dp"
+                                android:textOff="OFF"
+                                android:textOn="ON" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingTop="20dp"
-                            android:paddingBottom="20dp"
-                            android:text="Modalità aereo: "
-                            android:textOff="OFF"
-                            android:textOn="ON" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Schermo intero:"
+                                android:textSize="16sp" />
+
+                            <Switch
+                                android:id="@+id/Immersive_Mode_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingBottom="20dp"
+                                android:textOff="OFF"
+                                android:textOn="ON" />
+                        </LinearLayout>
 
 
-                        <Switch
-                            android:id="@+id/Immersive_Mode_switch"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="20dp"
-                            android:paddingBottom="20dp"
-                            android:text="Schermo intero:"
-                            android:textOff="OFF"
-                            android:textOn="ON" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Statistiche avanzate:"
+                                android:textSize="16sp" />
 
-                        <Switch
-                            android:id="@+id/Advanced_Stats_switch"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="20dp"
-                            android:paddingBottom="90dp"
-                            android:showText="false"
-                            android:text="Statistiche avanzate:"
-                            android:textOff="OFF"
-                            android:textOn="ON" />
+                            <Switch
+                                android:id="@+id/Advanced_Stats_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingBottom="20dp"
+                                android:showText="false"
+                                android:textOff="OFF"
+                                android:textOn="ON" />
+                        </LinearLayout>
 
                     </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp" />
 
                     <Button
                         android:id="@+id/logoutButton"

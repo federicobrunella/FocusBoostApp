@@ -60,9 +60,6 @@ class StatsFragment : Fragment() {
 
         EventChangeListener()
 
-        //binding.statsViewModel = viewModel
-        //binding.lifecycleOwner= this
-
     }
 
     override fun onDestroyView() {

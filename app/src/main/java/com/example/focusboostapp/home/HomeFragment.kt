@@ -52,13 +52,14 @@ class HomeFragment : Fragment() {
                 dialog, id ->
             dialog.dismiss()
             viewModel.stopTimer()
+            /*
             //Disable Immersive Mode if enabled
             if(viewModel.AppSettings.settingsImmersiveMode)
                 windowInsetsController.show(WindowInsetsCompat.Type.systemBars())
             //Disable DND if enabled
             if(viewModel.AppSettings.settingsDND) {
                 notificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
-            }
+            }*/
         })
         alertDialog.setNegativeButton("Annulla", DialogInterface.OnClickListener {
                 dialog, id ->
@@ -69,11 +70,19 @@ class HomeFragment : Fragment() {
 
         viewModel.isRunning.observe(viewLifecycleOwner, Observer{newState ->
             if(newState) {
-                binding.startStopButton.text = "Abbandona"
-                binding.buttonDescTextView.text = "Premere per abbandonare la sessione"
+                binding.startStopButton.text = "Stop"
+                binding.buttonDescTextView.text = "Press to leave the session"
             } else {
-                binding.startStopButton.text = "Avvia"
-                binding.buttonDescTextView.text = "Premere per avviare una sessione"
+                binding.startStopButton.text = "Start"
+                binding.buttonDescTextView.text = "Press to start a session"
+
+                //Disable Immersive Mode if enabled
+                if(viewModel.AppSettings.settingsImmersiveMode)
+                    windowInsetsController.show(WindowInsetsCompat.Type.systemBars())
+                //Disable DND if enabled
+                if(viewModel.AppSettings.settingsDND) {
+                    notificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
+                }
             }
         })
 
