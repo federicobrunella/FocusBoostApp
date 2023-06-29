@@ -18,60 +18,45 @@
             android:background="#FEFEFE"
             tools:context=".TimerActivity">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="411dp"
-                android:layout_height="286dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/about_us" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="387dp"
-                android:layout_height="257dp"
-                android:fontFamily="sans-serif-condensed-light"
-                android:text="L'app nasce come progetto per l'esame di Programmazione Mobile anno 2022/2023
-dell'Università Politecnica delle Marche.\nL'applicazione ha lo scopo di ridurre le distrazioni e aumentare la concentrazione.\nUna volta che il timer parte tutte le notifiche saranno disabilitate, inoltre l'app tiene
-traccia di tutte le volte che ci distraiamo prendendo in mano il telefono.\nIl timer programmabile garantisce una grande flessibilità a seconda delle varie esigenze dell'utente. \n \n \n
-                                         'Stay Focused!'"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView8"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-light"
-                android:text="Gli Sviluppatori"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.792"
-                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.871" />
+                tools:layout_editor_absoluteX="1dp">
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="cursive"
-                android:text="Federico & Leonardo."
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.834"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.925" />
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/about_us2" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="L'app nasce come progetto per l'esame di Programmazione Mobile anno 2022/2023
+    dell'Università Politecnica delle Marche.\nL'applicazione ha lo scopo di ridurre le distrazioni e aumentare la concentrazione.\nUna volta che il timer parte tutte le notifiche saranno disabilitate, inoltre l'app tiene
+    traccia di tutte le volte che ci distraiamo prendendo in mano il telefono.\nIl timer programmabile garantisce una grande flessibilità a seconda delle varie esigenze dell'utente."
+                    android:textSize="16sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="'Stay Focused!'" />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
