@@ -136,6 +136,8 @@ class SettingsFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.loggedUserTextView.text = firebaseAuth.currentUser?.email.toString()
+
 
         binding.settingsViewModel = viewModel
         binding.lifecycleOwner= this
