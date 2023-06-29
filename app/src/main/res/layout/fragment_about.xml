@@ -20,22 +20,28 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="352dp"
-                android:layout_height="230dp"
+                android:layout_width="411dp"
+                android:layout_height="286dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/about_us"
-                tools:layout_editor_absoluteY="89dp" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/about_us" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
+                android:layout_width="387dp"
+                android:layout_height="257dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="L'app nasce come progetto per l'esame di Programmazione Mobile anno 2022/2023
+dell'Università Politecnica delle Marche.\nL'applicazione ha lo scopo di ridurre le distrazioni e aumentare la concentrazione.\nUna volta che il timer parte tutte le notifiche saranno disabilitate, inoltre l'app tiene
+traccia di tutte le volte che ci distraiamo prendendo in mano il telefono.\nIl timer programmabile garantisce una grande flessibilità a seconda delle varie esigenze dell'utente. \n \n \n
+                                         'Stay Focused!'"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,22 +49,26 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Gli Sviluppatori"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.784"
+                app:layout_constraintHorizontal_bias="0.792"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.867" />
+                app:layout_constraintVertical_bias="0.871" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="cursive"
+                android:text="Federico & Leonardo."
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.784"
+                app:layout_constraintHorizontal_bias="0.834"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.925" />
