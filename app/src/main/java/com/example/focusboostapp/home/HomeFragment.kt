@@ -44,7 +44,6 @@ class HomeFragment : Fragment() {
 
         val notificationManager: NotificationManager = requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-
         val alertDialog = AlertDialog.Builder(requireContext())
         alertDialog.setTitle("Interrompere la sessione")
         alertDialog.setMessage("Abbandonando la lessione i progressi non saranno registrati")
@@ -52,14 +51,14 @@ class HomeFragment : Fragment() {
                 dialog, id ->
             dialog.dismiss()
             viewModel.stopTimer()
-            /*
+
             //Disable Immersive Mode if enabled
             if(viewModel.AppSettings.settingsImmersiveMode)
                 windowInsetsController.show(WindowInsetsCompat.Type.systemBars())
             //Disable DND if enabled
             if(viewModel.AppSettings.settingsDND) {
                 notificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
-            }*/
+            }
         })
         alertDialog.setNegativeButton("Annulla", DialogInterface.OnClickListener {
                 dialog, id ->

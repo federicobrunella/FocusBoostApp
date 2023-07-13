@@ -19,6 +19,7 @@ class SignInActivity : AppCompatActivity() {
         binding= DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
 
         firebaseAuth = FirebaseAuth.getInstance()
+
         binding.textView.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)

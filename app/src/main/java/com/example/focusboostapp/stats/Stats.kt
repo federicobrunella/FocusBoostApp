@@ -19,5 +19,4 @@ data class Stats(val user: String = "user",
                  val advancedSettings: Boolean ?= null,
                  val userDistractions: ArrayList<Timestamp> ?= null
 ) : Parcelable {
-
 }

@@ -2,11 +2,13 @@ package com.example.focusboostapp.settings
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.app.NotificationManager
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.provider.Settings
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -45,6 +47,9 @@ class SettingsFragment : Fragment() {
 
         val viewModel =  ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance( requireActivity().application)).get(SettingsViewModel::class. java)
         viewModel.init(requireContext())
+
+        val notificationManager: NotificationManager = requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
 
         val DNDSwitch = binding.DNDSwitch
         DNDSwitch.setChecked(viewModel.AppSettings.settingsDND)
@@ -115,6 +120,11 @@ class SettingsFragment : Fragment() {
         DNDSwitch.setOnClickListener {
             viewModel.AppSettings.settingsDND = DNDSwitch.isChecked
             viewModel.saveSettings(requireContext())
+
+            if (!notificationManager.isNotificationPolicyAccessGranted()) {
+                val intent = Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS)
+                startActivity(intent)
+            }
         }
 
         ImmersiveModeSwitch.setOnClickListener {
@@ -128,7 +138,6 @@ class SettingsFragment : Fragment() {
         }
 
         firebaseAuth = FirebaseAuth.getInstance()
-
         binding.logoutButton.setOnClickListener {
             firebaseAuth.signOut()
 
